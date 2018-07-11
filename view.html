@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>sougou</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="header">
+			<div class="logo">
+				<a href="#">
+					<span>LINE Dict</span><br>
+					<span>CHINESE-ENGILSH</span>
+				</a>
+			</div>
+			<div class="search">
+				<form id="iform">
+					<div class="radio">
+						<input type="radio" name="browser" onclick="check(this.value)" value="word"><span>单词</span>&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="browser" onclick="check(this.value)" value="example"><span>例句</span>&nbsp;&nbsp;
+					</div>
+					<div class="search_input">
+						<input type="text" name="input">
+						<img src="img/btn2.png">
+						<img src="img/btn1.png">
+					</div>
+					<div class="login">
+						<a href="#" class="login_btn">登陆</a>
+					</div>
+				</form>
+			</div>
+	</div>
+
+	<div id="container">
+		
+		<div class="sidebar" id="sidebar">
+			<a href="javascript:void(0);" class="side_btn" id="side_btn">
+	            <ul>
+	                <li><img src="img/leftbtn.png"></li>
+	                <li><img src="img/rightbtn.png"></li>
+	            </ul>
+	        </a>
+
+			
+				<div class="bar1 bar">
+					<ul class="list">
+						<li><a href="#">词典</a></li>
+						<li><a href="#">翻译器</a></li>
+						<li><a href="#">今日会话</a></li>
+					</ul>
+				</div>
+				<div class="bar2 bar">
+					<ul class="list">
+						<li><a href="#">设定</a></li>
+					</ul>
+				</div>
+				<div class="bar3 bar">
+					<ul class="list">
+						<li><a href="#">LINE词典官网账号</a></li>
+					</ul>
+				</div>
+				<div class="bar4 bar">
+					<ul class="list">
+						<li><p>通知</p></li>
+						<li><p>LINE汉英词典(PC版本)已更新</p></li>
+					</ul>
+				</div>
+				<div class="bar5 bar">
+					<ul class="list">
+						<li><p>LINE词典</p></li>
+						<li><a href="#">英语 ⟶ 汉语</a></li>
+						<li><a href="#">英语 ⟷ 泰语</a></li>
+					</ul>
+				</div>
+		</div>
+
+		<div class="content">
+			<div class="main">
+				<div class="dictum">
+					
+					<div class="picture">
+						<img src="img/linefriends.png">
+					</div>
+					<div class="word word1">
+						<h3 class="title1">今日会话</h3>
+						<a href="#"><h2>你有什么需要的?</h2></a>
+						<img src="img/listen.png"/>
+						<p>Is there anything you need?</p>
+						<a href="#" class="more">查看更多 > </a>
+					</div>
+				</div>
+				<div class="dictum">
+					<h3 class="title2">今日名言</h3>
+					<div class="word word2">
+						<a href="#"><h2>读书破万卷，下笔如有神。</h2></a>
+						<img src="img/listen.png">
+						<span class="name">- 杜甫</span>
+						<p class="text" style="color: black;">Dúshū pò wàn juǎn, xiàbǐ rú yǒu shén.</p>
+					    <p>Having pored over ten thousand volumes,one can write with godly power.</p>
+					    <a href="#" class="more mo">查看更多 ></a>
+					</div>
+					
+				</div>
+			</div>
+			<div class="content_footer">
+				<div class="con_f">
+					<div class="foo1">
+						<span>数据提供</span>
+						<span><strong>Collins</strong></span>
+					</div>
+					<div class="foo2">
+						<span><a href="#">分享LINE词典</a></span>
+						<a href="#"><img src="img/facebook.png"></a>
+						<a href="#"><img src="img/twitter.png"></a>
+						<a href="#"><img src="img/goole.png"></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="side">
+				<div class=" sid s1">
+					<img src="img/photo1.png">
+				</div>
+				<div class="card">
+					<p>单词卡</p>
+					<p>目前没有单词</p>
+				</div>
+				<div class="sid s2">
+					<img src="img/photo2.png">
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+	<div id="footer">
+		<!-- <ul class="link">
+			<li><a href="#">帮助</a></li>
+			<li><a href="#">隐私条款</a></li>
+			<li><a href="#">使用条款</a></li>
+			<li><a href="#">通知</a></li>
+			<li><a href="#">@ NAVER Corp</a></li>
+		</ul> -->
+		<div class="fo">
+			<a href="#">帮助</a>
+			<a href="#">隐私条款</a>
+			<a href="#">使用条款</a>
+			<a href="#">通知</a>
+			<a href="#">@ NAVER Corp</a>
+		</div>
+	</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="index.js">
+	$(document).ready(function(){
+    var isHiden = true; /*控制切换菜单*/
+    $('#side_btn').click(function(){
+        if(isHiden){
+            $('#sidebar').animate({right:'+=217px'}); //菜单块向左移动
+        }else{
+            $('#sidebar').animate({right:'-=217px'});//菜单块向右移动
+        }
+        isHiden = !isHiden;
+    });
+// isHiden只是返回部件的隐藏属性，并不能表示部件当前的真实状态。比如A部件有个子部件B，而A处于隐藏状态，子部件B必然也不可见，但子部件B本身的isHiden还是为false。
+    // 信号量
+    var index = 0;
+    // 更改按钮文字の点击事件
+    $('#side_btn').click(function(){
+        //防流氓点击
+        if($('#side_btn ul li').is(":animated")){
+            return;
+        }
+        // 老文字淡出
+        $('#side_btn ul li').eq(index).fadeOut(0,function(){
+            // 信号量
+            index --;
+            if(index < 0){
+                index = 1;
+            }
+            // 新文字淡入
+            $('#side_btn ul li').eq(index).fadeIn(0);
+        });
+    });
+});
+</script>
+</html>
