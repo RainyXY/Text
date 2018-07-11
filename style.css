@@ -60,7 +60,7 @@ span{
 	width: 30px;
     height: 29.5px;
     position: absolute;
-    left: 656px;
+    left: 640px;
     top: 25px;
     border-left: 1px solid #efefef;
 }
@@ -68,7 +68,7 @@ span{
 	cursor: pointer;
 }
 .search_input img:nth-child(2){
-	left: 687px;
+	left: 671px;
 }
 .login{
 	align-self: center;
